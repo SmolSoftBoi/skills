@@ -1,0 +1,22 @@
+# Optional Codex-specific metadata for a skill.
+# This file is intentionally inert in the template.
+# After copying the template, either delete this file or uncomment and replace
+# only the fields you actually need for the finished skill.
+
+# interface:
+#   display_name: "Skill Template"
+#   short_description: "Starter metadata for a Codex-compatible skill."
+#   default_prompt: "Use this skill when creating or refining a reusable agent skill."
+
+# policy:
+#   # Set to false if the skill should only run when explicitly invoked, such as `$skill-name`.
+#   allow_implicit_invocation: true
+
+# Uncomment and adapt this section only when the skill depends on external tools.
+# dependencies:
+#   tools:
+#     - type: "mcp"
+#       value: "openaiDeveloperDocs"
+#       description: "OpenAI Docs MCP server"
+#       transport: "streamable_http"
+#       url: "https://developers.openai.com/mcp"
