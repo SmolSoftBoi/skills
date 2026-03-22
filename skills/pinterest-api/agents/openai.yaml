@@ -1,0 +1,7 @@
+interface:
+  display_name: "Pinterest API"
+  short_description: "Build and debug Pinterest API integrations"
+  default_prompt: "Use $pinterest-api to help me build a Pinterest API integration for <goal>."
+  icon_small: "./assets/p-badge.svg"
+  icon_large: "./assets/p-badge.png"
+  brand_color: "#E60023"
