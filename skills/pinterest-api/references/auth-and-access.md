@@ -20,7 +20,7 @@ Source pages:
 
 ## Grant selection
 
-- Use the authorisation-code flow by default for user-scoped work such as organic content, ads, analytics, shopping, and conversions on a user's behalf.
+- Use the authorization-code flow by default for user-scoped work such as organic content, ads, analytics, shopping, and conversions on a user's behalf.
 - Use the client-credentials flow only when the endpoint and use case do not require user context. Re-read the live auth guide before issuing a request on this path because it is the less common flow and Pinterest can change the exact request requirements.
 
 ## Scope selection
@@ -33,7 +33,7 @@ Source pages:
 
 - Exchange codes at `POST https://api.pinterest.com/v5/oauth/token`.
 - Use HTTP Basic authentication with `client_id:client_secret` as the credentials pair.
-- For the authorisation-code flow, the live docs currently show `grant_type=authorization_code` with `code` and `redirect_uri`.
+- For the authorization-code flow, the live docs currently show `grant_type=authorization_code` with `code` and `redirect_uri`.
 - Pinterest documents a token revoke endpoint under the `oauth` family. Use it when the user needs to invalidate access cleanly.
 - For apps created on or after 25 September 2025, assume continuous refresh tokens by default. The docs call out older refresh-token behaviour only for apps created before that date.
 
