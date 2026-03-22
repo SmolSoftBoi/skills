@@ -5,6 +5,7 @@ Source pages:
 - https://developers.pinterest.com/docs/developer-tools/quickstart-tools/
 - https://developers.pinterest.com/docs/developer-tools/sandbox/
 - https://developers.pinterest.com/docs/developer-tools/token-debugger/
+- https://developers.pinterest.com/docs/api/v5/oauth-conversion_token/
 - https://github.com/pinterest/api-quickstart#readme
 
 ## Fast test paths
@@ -25,6 +26,7 @@ Source pages:
 - Use the Token Debugger when the likely problem is expiry, invalid tokens, wrong scopes, or a user session issue.
 - The current docs say the debugger accepts Pinterest OAuth access or refresh tokens for version 5, including the `pina` and `pinr` prefixes.
 - Check environment, app ID, user ID, created time, expiry, login state, and scopes before changing code.
+- For server-side conversion events, first confirm the integration generated a dedicated conversion token via `POST /oauth/conversion_token` instead of reusing a standard OAuth token.
 
 ## Quickstart and Postman
 
@@ -36,7 +38,8 @@ Source pages:
 
 1. Confirm the environment: production vs sandbox.
 2. Confirm the token type and expiry.
-3. Confirm the app has the required approval and access tier.
-4. Confirm scopes for the endpoint family.
-5. Confirm the endpoint is supported in the chosen environment.
-6. Retry with a minimal `curl` request before changing more code.
+3. Confirm the app has trial access or the required access tier.
+4. For `POST /ad_accounts/{ad_account_id}/events`, confirm the caller is using a conversion token rather than a standard OAuth token.
+5. Confirm scopes for the endpoint family.
+6. Confirm the endpoint is supported in the chosen environment.
+7. Retry with a minimal `curl` request before changing more code.

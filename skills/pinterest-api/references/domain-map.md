@@ -27,7 +27,7 @@ Source pages:
 | Organic content and users | Pins, boards, media uploads, basic user-account data | `pins`, `boards`, `media`, `user_account` | Default to raw REST and `curl`. |
 | Ads and analytics | Ad accounts, campaigns, ad groups, ads, targeting, paid reporting | `ad_accounts`, `campaigns`, `ad_groups`, `ads`, `reports`, `keywords` | This is the main area where the Python SDK is useful. |
 | Shopping | Catalogues, feeds, product groups, item ingestion, item diagnostics | `catalogs`, `feeds`, `product_groups`, `items` | Check sandbox support carefully before promising test coverage. |
-| Conversions | Conversion events, conversion tags, cleanup requests | `conversion_events`, `conversion_tags`, related conversion endpoints | Keep auth and scope checks tight because these flows are often environment-sensitive. |
+| Conversions | Conversion events, conversion tags, cleanup requests | `conversion_events`, `conversion_tags`, related conversion endpoints | Keep auth and scope checks tight. Server-side conversion events use the conversion-token path; other conversion endpoints follow their own documented auth model. |
 
 ## Routing tips
 
@@ -35,6 +35,7 @@ Source pages:
 - If the user says "campaign", "ad group", "creative", "audience", "keyword", "budget", or "report", start in ads and analytics.
 - If the user says "catalogue", "feed", "merchant", "product group", or "items", start in shopping.
 - If the user says "tag", "event", "conversion", or "attribution", start in conversions.
+- If the user is sending server-side conversion events to `POST /ad_accounts/{ad_account_id}/events`, start by checking the conversion token rather than redirect URIs.
 - If the user asks for "analytics", distinguish organic vs paid before choosing endpoints. Paid delivery analytics sit with ads families and `reports`.
 
 ## Python SDK rule

@@ -19,16 +19,19 @@ description: Use this skill when the user needs to plan, implement, debug, or re
 # Instructions
 ## Workflow
 1. Classify the request as platform setup, organic content, ads and analytics, shopping, conversions, or debugging.
-2. Confirm prerequisites before suggesting implementation details: app approval or access tier, app ID and secret, exact redirect URI match, token state, scopes, and production vs sandbox.
+2. Confirm prerequisites before suggesting implementation details: trial access or the required access tier, app ID and secret once the app is connected, exact redirect URI match, token state, scopes, and production vs sandbox.
 3. Choose the authentication path. Default to the authorization-code flow.
 4. Use client credentials only when the endpoint and use case do not require user context.
-5. Route to the smallest relevant endpoint family and provide a minimal request example instead of long endpoint lists.
-6. Escalate to debugging tools when the likely failure is token expiry, wrong environment, redirect mismatch, missing scopes, or unsupported sandbox coverage.
-7. If the user's intent is clear and the next step is reversible and low-risk, proceed without unnecessary clarification; ask only when missing information would materially change the guidance.
+5. For server-side conversion events, use the documented conversion-token path instead of the standard redirect-URI troubleshooting flow.
+6. Route to the smallest relevant endpoint family and provide a minimal request example instead of long endpoint lists.
+7. Escalate to debugging tools when the likely failure is token expiry, wrong environment, redirect mismatch, missing scopes, unsupported sandbox coverage, or the wrong token type for the endpoint.
+8. If the user's intent is clear and the next step is reversible and low-risk, proceed without unnecessary clarification; ask only when missing information would materially change the guidance.
 
 ## Authentication Defaults
-- Treat apps created on or after 25 September 2025 as using continuous refresh tokens by default.
-- Do not assume legacy refresh-token behavior for newer apps.
+- Treat `POST /oauth/token` as using the continuous refresh model.
+- For apps activated before 25 September 2025, include `continuous_refresh=true` when the token flow requires it.
+- For apps activated on or after 25 September 2025, continuous refresh is automatic.
+- Do not route users toward an `everlasting_refresh` or other legacy refresh-token path.
 - Keep scope requests narrow and matched to the endpoint family.
 - Prefer live docs over memory for exact scope names and request fields.
 
@@ -40,7 +43,7 @@ description: Use this skill when the user needs to plan, implement, debug, or re
 - Prefer `curl` for neutral examples.
 - Add Python SDK examples only for ads workflows or when the user explicitly requests Python.
 - Call out when sandbox support differs from production.
-- If the user is missing app approval or a valid token, resolve that first instead of speculating about endpoint behavior.
+- If the user is missing trial access, the required access tier, or the right token for the endpoint, resolve that first instead of speculating about endpoint behavior.
 - Return only the guidance needed for the user's request; avoid long endpoint inventories unless explicitly asked.
 
 # Reasoning and Verification
