@@ -1,0 +1,7 @@
+interface:
+  display_name: "Condense ChatGPT Memories"
+  short_description: "Turn pasted memory dumps into compact reusable ChatGPT profile blocks."
+  default_prompt: "Condense this pasted memory text into a short Memory Block with Preferences, Constraints, and Communication. Deduplicate overlaps, keep only durable user-specific details, and add Uncertain or Excluded only if needed."
+
+policy:
+  allow_implicit_invocation: true
