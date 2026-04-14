@@ -11,7 +11,7 @@ Use this guide when adding or updating a skill in this repository.
 
 ## 📦 Codex and `skills.sh`
 
-- Keep local Codex usage simple by developing skills under `skills/<skill-name>/` while the repo exposes `.agents/skills` as a project-local scan path.
+- Keep local Codex usage simple by developing skills under `skills/<skill-name>/` and creating `.agents/skills/` locally in your own checkout only when you want a project-local scan path.
 - Make sure each shipped skill has a valid `SKILL.md`, matching directory name, and clear README usage examples.
 - Treat `agents/openai.yaml` as optional additive metadata. Portability still comes from the base skill structure and `SKILL.md`.
 

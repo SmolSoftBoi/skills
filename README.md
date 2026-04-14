@@ -11,14 +11,12 @@ This repository follows the open [Agent Skills specification](https://agentskill
 - A starter template for new skills under `templates/skill-template/`
 - Lightweight authoring guidance in `docs/authoring.md`
 
-This repository is a source catalogue first. For local Codex discovery, `.agents/skills` points at `skills/`, so the repo also works as a project-local scanned skills directory without changing the canonical source layout.
+This repository is a source catalogue first. Keep `skills/` as the canonical source tree, and set up `.agents/skills/` locally in your own checkout if you want project-local Codex discovery.
 
 ## 📦 Repository Layout
 
 ```text
 .
-├── .agents/
-│   └── skills -> ../skills
 ├── docs/
 │   └── authoring.md
 ├── skills/
@@ -47,7 +45,7 @@ Codex reads skills from scanned locations such as:
 - `~/.agents/skills/`
 - `/etc/codex/skills/`
 
-This repository already exposes `<this-project>/.agents/skills/` by symlinking `.agents/skills` to `skills/`.
+For project-local discovery in your own checkout, create `.agents/skills/` locally and copy or symlink the specific skill directories you want Codex to scan. `.agents/` is gitignored because that setup is machine-specific.
 
 To use a skill from this catalogue elsewhere, copy or symlink the individual skill directory into one of the other scanned locations.
 
