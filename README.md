@@ -11,12 +11,14 @@ This repository follows the open [Agent Skills specification](https://agentskill
 - A starter template for new skills under `templates/skill-template/`
 - Lightweight authoring guidance in `docs/authoring.md`
 
-This repository is a source catalogue, not a ready-made `.agents/skills/` directory. Install or reference individual skill folders from `skills/`, not the repository root.
+This repository is a source catalogue first. For local Codex discovery, `.agents/skills` points at `skills/`, so the repo also works as a project-local scanned skills directory without changing the canonical source layout.
 
 ## 📦 Repository Layout
 
 ```text
 .
+├── .agents/
+│   └── skills -> ../skills
 ├── docs/
 │   └── authoring.md
 ├── skills/
@@ -45,10 +47,18 @@ Codex reads skills from scanned locations such as:
 - `~/.agents/skills/`
 - `/etc/codex/skills/`
 
-To use a skill from this catalogue, copy or symlink the individual skill directory into one of those locations.
+This repository already exposes `<this-project>/.agents/skills/` by symlinking `.agents/skills` to `skills/`.
+
+To use a skill from this catalogue elsewhere, copy or symlink the individual skill directory into one of the other scanned locations.
 
 ```bash
 ln -s /absolute/path/to/this-repo/skills/my-skill ~/.agents/skills/my-skill
+```
+
+If you prefer the `skills.sh` flow, install the repository as an optional alternative with:
+
+```bash
+npx skills add SmolSoftBoi/skills
 ```
 
 After installation, you can:

@@ -1,18 +1,21 @@
 # Optional Codex-specific metadata for a skill.
 # This file is intentionally inert in the template.
-# After copying the template, either delete this file or uncomment and replace
-# only the fields you actually need for the finished skill.
+# After copying the template, either delete this file or uncomment only the
+# fields that improve the finished skill for Codex users.
+# The core portable definition still lives in SKILL.md.
 
 # interface:
 #   display_name: "Skill Template"
-#   short_description: "Starter metadata for a Codex-compatible skill."
-#   default_prompt: "Use this skill when creating or refining a reusable agent skill."
+#   short_description: "Optional Codex metadata for a reusable skill."
+#   default_prompt: "Use this skill when creating or refining a reusable skill."
 
 # policy:
-#   # Set to false if the skill should only run when explicitly invoked, such as `$skill-name`.
+#   # Set this to false if the skill should only run when explicitly invoked,
+#   # such as `$skill-name`.
 #   allow_implicit_invocation: true
 
-# Uncomment and adapt this section only when the skill depends on external tools.
+# Uncomment and adapt this section only when the skill depends on external tools
+# that should be declared for Codex.
 # dependencies:
 #   tools:
 #     - type: "mcp"
