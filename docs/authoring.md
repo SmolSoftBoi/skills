@@ -9,6 +9,12 @@ Use this guide when adding or updating a skill in this repository.
 - Optional per-skill directories are `scripts/`, `references/`, `assets/`, and `agents/openai.yaml`.
 - Keep each skill self-contained. Do not add repo-wide shared runtime helpers in v1.
 
+## 📦 Codex and `skills.sh`
+
+- Keep local Codex usage simple by developing skills under `skills/<skill-name>/` and creating `.agents/skills/` locally in your own checkout only when you want a project-local scan path.
+- Make sure each shipped skill has a valid `SKILL.md`, matching directory name, and clear README usage examples.
+- Treat `agents/openai.yaml` as optional additive metadata. Portability still comes from the base skill structure and `SKILL.md`.
+
 ## 🏷 Naming Rules
 
 The open Agent Skills spec requires the `name` in `SKILL.md` to match the parent directory name exactly.
