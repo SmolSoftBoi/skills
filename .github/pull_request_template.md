@@ -2,9 +2,9 @@
 
 <!-- What changed? Keep this brief and specific. -->
 
-- [Summarise the primary change.]
-- [Summarise any supporting change.]
-- [Note any compatibility or migration impact.]
+- _Summarise the primary change._
+- _Summarise any supporting change._
+- _Note any compatibility or migration impact._
 
 ## Change type
 
