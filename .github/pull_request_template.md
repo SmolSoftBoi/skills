@@ -24,7 +24,7 @@
 - [ ] The skill lives under `skills/<skill-name>/`.
 - [ ] `SKILL.md` exists.
 - [ ] The `name` field matches the skill directory exactly.
-- [ ] The `description` is trigger-focused and starts with clear “Use this skill when…” style wording.
+- [ ] The `description` is trigger-focused and uses imperative wording such as `Use this skill when...`.
 - [ ] Any referenced `scripts/`, `references/`, `assets/`, or `agents/openai.yaml` files exist.
 - [ ] The skill remains usable without Codex-specific metadata.
 
@@ -38,11 +38,11 @@
 
 ## Validation
 
-<!-- What did you check? -->
+<!-- Tick every completed check. Explain any omitted or inapplicable checks. -->
 
 - [ ] I reviewed the changed files manually.
-- [ ] I validated the skill locally with `skills-ref validate skills/<skill-name>`.
-- [ ] Not run / not applicable.
+- [ ] If available locally, I ran `skills-ref validate skills/my-skill` after replacing `my-skill` with the actual skill directory name.
+- Checks not run or not applicable: _Explain why, or delete this line._
 
 ## Notes for review
 
